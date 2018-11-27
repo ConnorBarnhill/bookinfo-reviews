@@ -1,2 +1,5 @@
 #!/bin/bash
-docker run --rm -v "$(pwd)":/home/gradle/project -w /home/gradle/project gradle:4.8.1 gradle clean build
+dir="$(pwd)"
+parentdir="$(dirname "$dir")"
+echo $parentdir
+docker run --rm -v $parentdir:/home/gradle/project -w /home/gradle/project gradle:4.8.1 gradle clean build

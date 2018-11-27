@@ -4,4 +4,6 @@ parentdir="$(dirname "$dir")"
 echo $dir
 echo $parentdir
 cd ..
-docker run --rm -v $parentdir:/home/gradle/project -w /home/gradle/project gradle:4.8.1 gradle clean build
+ls
+echo "$(pwd)"
+docker run --user root --rm -v "$(pwd)":/home/gradle/project -w /home/gradle/project gradle:4.8.1 gradle clean build

@@ -1,7 +1,8 @@
 #!/bin/bash
-pushd reviews-wlpcfg
-    docker build -f $DOCKERFILE_PATH -t $IMAGE_NAME . \
-        --build-arg service_version=$service_version \
-        --build-arg enable_ratings=$enable_ratings \
-        --build-arg star_color=$star_color
-popd
+echo 'here'
+echo $DOCKERFILE_PATH
+docker build -f $DOCKERFILE_PATH -t $IMAGE_NAME ./reviews-wlpcfg \
+    --build-arg service_version=$service_version \
+    --build-arg enable_ratings=$enable_ratings \
+    --build-arg star_color=$star_color
+
